@@ -25,7 +25,7 @@ aktualisiert.
 ## Lokal starten
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8000 --directory public
 ```
 
 Dann `http://localhost:8000` im Browser öffnen.

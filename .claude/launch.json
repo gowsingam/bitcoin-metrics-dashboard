@@ -4,7 +4,7 @@
     {
       "name": "static-site",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8000"],
+      "runtimeArgs": ["-m", "http.server", "8000", "--directory", "public"],
       "port": 8000
     }
   ]
