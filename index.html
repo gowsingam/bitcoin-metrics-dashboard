@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bitcoin Metrics Dashboard</title>
+<meta name="description" content="Alle wichtigen Bitcoin-Metriken auf einen Blick: Preis, Marktdaten, On-Chain-Daten, Entwickleraktivität und Sentiment.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><circle cx=%2216%22 cy=%2216%22 r=%2216%22 fill=%22%23eda100%22/><text x=%2216%22 y=%2222%22 font-size=%2218%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22 font-weight=%22bold%22>%E2%82%BF</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <div class="hero-top">
+      <div class="brand">
+        <span class="brand-glyph">₿</span>
+        <div>
+          <h1>Bitcoin Metrics</h1>
+          <p class="muted" id="last-updated">Lade Daten…</p>
+        </div>
+      </div>
+      <div class="currency-switch" role="group" aria-label="Währung wählen">
+        <button type="button" class="currency-btn is-active" data-ccy="usd">USD</button>
+        <button type="button" class="currency-btn" data-ccy="eur">EUR</button>
+        <button type="button" class="currency-btn" data-ccy="chf">CHF</button>
+      </div>
+    </div>
+
+    <div class="hero-main">
+      <div class="hero-price-block">
+        <div class="hero-price" id="hero-price">–</div>
+        <div class="hero-badges">
+          <span class="badge" id="badge-24h">24h –</span>
+          <span class="badge badge-muted" id="badge-rank">Rank –</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+        <div class="sparkline-label">7 Tage</div>
+        <svg id="sparkline" viewBox="0 0 600 140" preserveAspectRatio="none" aria-label="Preisverlauf 7 Tage"></svg>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section" aria-labelledby="h-changes">
+      <h2 id="h-changes">Preisänderung</h2>
+      <div class="tile-grid tile-grid-8" id="grid-changes"></div>
+    </section>
+
+    <section class="section" aria-labelledby="h-market">
+      <h2 id="h-market">Marktdaten</h2>
+      <div class="tile-grid" id="grid-market"></div>
+    </section>
+
+    <section class="section" aria-labelledby="h-supply">
+      <h2 id="h-supply">Angebot</h2>
+      <div class="tile-grid" id="grid-supply"></div>
+      <div class="supply-bar-wrap">
+        <div class="supply-bar"><div class="supply-bar-fill" id="supply-fill"></div></div>
+        <div class="supply-bar-label" id="supply-label">–</div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="h-network">
+      <h2 id="h-network">Netzwerk &amp; On-Chain <span class="src">mempool.space</span></h2>
+      <div class="tile-grid" id="grid-network"></div>
+    </section>
+
+    <section class="section" aria-labelledby="h-fees">
+      <h2 id="h-fees">Empfohlene Gebühren <span class="src">mempool.space</span></h2>
+      <div class="tile-grid tile-grid-5" id="grid-fees"></div>
+    </section>
+
+    <section class="section" aria-labelledby="h-sentiment">
+      <h2 id="h-sentiment">Sentiment</h2>
+      <div class="tile-grid" id="grid-sentiment"></div>
+    </section>
+
+    <section class="section" aria-labelledby="h-dev">
+      <h2 id="h-dev">Entwickleraktivität <span class="src">github.com/bitcoin/bitcoin</span></h2>
+      <div class="tile-grid" id="grid-dev"></div>
+    </section>
+
+    <section class="section" aria-labelledby="h-info">
+      <h2 id="h-info">Allgemeine Informationen</h2>
+      <div class="tile-grid" id="grid-info"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Daten von <a href="https://www.coingecko.com/" target="_blank" rel="noopener">CoinGecko</a>,
+      <a href="https://mempool.space/" target="_blank" rel="noopener">mempool.space</a>,
+      <a href="https://github.com/bitcoin/bitcoin" target="_blank" rel="noopener">GitHub</a> und
+      <a href="https://alternative.me/crypto/fear-and-greed-index/" target="_blank" rel="noopener">alternative.me</a>.
+      Aktualisiert automatisch alle 60 Sekunden. Keine Anlageberatung.</p>
+  </footer>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
